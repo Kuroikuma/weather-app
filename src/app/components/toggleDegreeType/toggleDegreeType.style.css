@@ -1,0 +1,52 @@
+.ToggleContainer {
+  height: 5.3%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.ToggleContainerleft {
+  height: 70%;
+  width: 10.5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ToggleContainerleft button {
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+}
+#celciusButton {
+  height: 100%;
+  width: 40%;
+  border-radius: 50%;
+}
+#celciusButton.C {
+  color: #110e3c;
+  background: #e7e7eb;
+}
+#celciusButton.F {
+  color: #e7e7eb;
+  background: #585676;
+}
+#fahrenheitButton {
+  height: 100%;
+  width: 40%;
+  border-radius: 50%;
+}
+#fahrenheitButton.C {
+  color: #e7e7eb;
+  background: #585676;
+}
+#fahrenheitButton.F {
+  color: #110e3c;
+  background: #e7e7eb;
+}
