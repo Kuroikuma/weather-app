@@ -37,3 +37,28 @@
   width: 90%;
   object-fit: contain;
 }
+@media screen and (max-width: 750px) {
+  .FollowingWeatheContainer {
+    height: 90vh;
+    margin-top: 50px;
+    grid-template-columns: repeat(3, 30%);
+    grid-template-rows: 40% 40%;
+    justify-content: center;
+    gap: 40px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .FollowingWeatheContainer {
+    height: 70vh;
+    grid-template-columns: repeat(3, 32%);
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .FollowingWeatheContainer {
+    height: 90vh;
+    grid-template-columns: repeat(2, 45%);
+    grid-template-rows: 30% 30% 30%;
+    gap: 30px;
+  }
+}

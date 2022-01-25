@@ -4,11 +4,11 @@ import { Page } from "./app/page/page.view";
 import { WeatherContextProvider } from "./app/context/weather.context";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <WeatherContextProvider>
+  <WeatherContextProvider>
+    <React.StrictMode>
       <Page />
-    </WeatherContextProvider>
-  </React.StrictMode>,
+    </React.StrictMode>
+  </WeatherContextProvider>,
   document.getElementById("root")
 );
 

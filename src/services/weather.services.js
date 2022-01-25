@@ -1,5 +1,6 @@
-const apiUrl =
-  "https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/";
+/*const apiUrl =
+  "https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/";*/
+const apiUrl = "https://www.metaweather.com/api/location/";
 
 export const ServicesGetWeatherState = (woeid) => {
   const baseUrl = `${apiUrl}${woeid}`;

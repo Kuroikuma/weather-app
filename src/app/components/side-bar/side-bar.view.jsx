@@ -16,7 +16,7 @@ const SideBarView = (props) => {
     handleShow,
   } = props;
   return (
-    <>
+    <div className="sideBarContainerGlobal">
       <SideBarSearch isShowSearch={isShowSearch} handleShow={handleShow} />
       <div className="sideBarContainer">
         {isLoading ? (
@@ -71,7 +71,7 @@ const SideBarView = (props) => {
           </>
         )}
       </div>
-    </>
+    </div>
   );
 };
 

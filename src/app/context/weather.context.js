@@ -1,10 +1,28 @@
 import React, { useState, useEffect } from "react";
+
 const Context = React.createContext({});
 export const WeatherContextProvider = ({ children }) => {
   const [weather, setWeather] = useState({});
-  const [keyboard, setKeyboard] = useState(2442047);
+  const [keyboard, setKeyboard] = useState(2449808);
   const [typeDegree, setTypeDegree] = useState("C");
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const keyboardData = JSON.parse(localStorage.getItem("keyboard"));
+
+    if (keyboardData) {
+      setKeyboard(keyboardData);
+    }
+    console.log("1" + localStorage.getItem("keyboard"));
+  }, []);
+
+  useEffect(() => {
+    if (keyboard !== 2449808) {
+      console.log("que a pachao" + keyboard);
+      localStorage.setItem("keyboard", JSON.stringify(keyboard));
+    }
+  }, [keyboard]);
+
   useEffect(() => {
     const weatherData = JSON.parse(localStorage.getItem("weather"));
 
@@ -12,6 +30,9 @@ export const WeatherContextProvider = ({ children }) => {
       setWeather(weatherData);
     }
   }, []);
+  useEffect(() => {
+    localStorage.setItem("weather", JSON.stringify(weather));
+  }, [weather]);
 
   const convertDegree = (degree) => {
     if (typeDegree === "F") {
@@ -22,22 +43,6 @@ export const WeatherContextProvider = ({ children }) => {
     }
     return Math.round(degree);
   };
-
-  useEffect(() => {
-    localStorage.setItem("weather", JSON.stringify(weather));
-  }, [weather]);
-
-  useEffect(() => {
-    const keyboardData = JSON.parse(localStorage.getItem("keyboard"));
-
-    if (keyboardData) {
-      setKeyboard(keyboardData);
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("keyboard", JSON.stringify(keyboard));
-  }, [keyboard]);
 
   return (
     <Context.Provider

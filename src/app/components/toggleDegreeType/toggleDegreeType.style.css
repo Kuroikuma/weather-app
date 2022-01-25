@@ -50,3 +50,15 @@
   color: #110e3c;
   background: #e7e7eb;
 }
+@media screen and (max-width: 1000px) {
+  .ToggleContainerleft {
+    width: 16%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .ToggleContainer {
+    height: 0px;
+    width: 0px;
+    opacity: 0;
+  }
+}

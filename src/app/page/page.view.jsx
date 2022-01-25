@@ -9,11 +9,16 @@ import "./page.style.css";
 
 export const Page = () => {
   const { setWeather, setIsLoading, keyboard } = useContext(Context);
+
   useEffect(() => {
-    ServicesGetWeatherState(keyboard).then((response) => {
-      setWeather(response);
-      setIsLoading(false);
-    });
+    if (keyboard === 2449808 && localStorage.getItem("keyboard") !== null) {
+    } else {
+      console.log(keyboard);
+      ServicesGetWeatherState(keyboard).then((response) => {
+        setWeather(response);
+        setIsLoading(false);
+      });
+    }
   }, [keyboard]);
 
   return (
